@@ -1,0 +1,105 @@
+.button-store {
+    /*tag a já vem com o display inline por isso o width não funciona*/
+    display: inline-block; /*deixa na mesma linha e podemos definir altura e largura*/
+    box-sizing: border-box;
+    background-color: #252c41;
+    font-size: 20px;
+    color: #fff;
+    font-family: Arial, "Roboto", sans-serif;
+    width: 200px;
+    height: 60px;
+    line-height: 60px; /*usando para centralizar eixo y, porem só pode fazer isso se for 1 linha*/
+    margin-right: 0;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+  
+    transition: all 300ms linear;
+  }
+  
+  .button-store:hover,
+  .button-store:focus {
+    background-color: #fff;
+    color: #e24647;
+  }
+  
+  .button-store:active {
+    transform: scale(0.9);
+  }
+  
+  .button-store.-second { /*todo elemento que começa com - é referente a uma variação */
+    background-color: transparent;
+    border: 2px solid #fff;
+    width: 218px;
+    line-height: 56px;
+  }
+  
+  .button-store.-second:hover,
+  .button-store.-second:focus {
+    background-color: #fff;
+    color: #e24647;
+  }
+  
+  /* Alinhando os botões paralelamente e herdando parâmetros para facilitar a manutenção*/
+  .button-store > button,
+  .button-store > a {
+    font-size: inherit;
+    background-color: inherit;
+    border: none;
+    color: inherit;
+    text-decoration: inherit;
+  }
+
+/*Botão Adicionar o carrinho antes de refatorar*/
+/* A ideia é identificar padrões e aplicar para a classe.*/
+/* assim o código fica limpo e mais facil de fazer */
+/*.button-store-second-antes-de-refatorar {
+/*    background-color: transparent;
+/*   border: 2px solid #ffffff;
+/*    border-radius: 15px;
+/*   display: inline-block; 
+/*    width: 218px;
+/*    /*vertical-align: top;*//* Só da para usar quando existe dois elementos inline. Alinhando pelo topo. */
+/*    font-size: 20px;
+/*    font-family: Arial, 'Roboto', sans-serif;
+/*    color: #ffffff;
+/*    text-decoration: none;
+/*    text-align: center;
+/*    line-height: 60px; 
+/*    margin-right: 0;
+/*    /* Os botões ficaram de tamanhos diferentes pois o browser soma o valor da borda ao elemento. */
+/*    /* Para resolver essa diferença e deixar o botão exatamente com o tamanho imputado devemos usar */
+/*    /* uma propriedade chamada box-sizing*/
+/*    box-sizing: border-box; /* falando que o tamanho da borda deve fazer parte do conteúdo.*/
+/*    height: 56px; /* mudando o valor do tamanho da linha para deixar o texto centralizado pois agora*/
+/*    /* o calculo deve considerar o tamanho da borda de 2px em cada lado*/
+/*    /* o box-sizing vai auxiliar para o estilo considerar os tamanhos predefinidos pelo programador. */
+/*}*/
+  
+  @media (max-width: 1310px) {
+    .button-store.-second {
+      margin-right: 38px;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .button-store.-second {
+      margin-right: 20px;
+    }
+  }
+  
+  @media (max-width: 470px) {
+    .button-store,
+    .button-store.-second {
+      display: block;
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    .button-store.-second {
+      margin-bottom: 20px;
+    }
+  }
+  
